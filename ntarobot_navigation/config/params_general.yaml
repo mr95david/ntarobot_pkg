@@ -1,0 +1,18 @@
+# El siguiente archivo contiene los valores por defecto para la conexion del robot con 
+# los stacks de nav2, en este caso se recomienda usar el robot en la version de lanzamiento
+# dado que este aun no tiene una simulacion de ejecucion en gazebo.
+
+nav_ntarobot:
+  simulation: false
+  slam: false
+  robot: ntarobot
+  robot_position:
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    roll: 0.0
+    pitch: 0.0
+    yaw: 0.0
+  ntarobot_arm: no-arm
+  ntarobot_camera: none
+  ntarobot_lidar: true
