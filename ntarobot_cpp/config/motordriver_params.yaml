@@ -1,0 +1,18 @@
+md49_controller_node:
+  ros__parameters:    
+    # port_name:          "/dev/ttyUSB0" 
+    port_name:          "/dev/driver_port" # Agregar nombre de puerto 
+    serial_baud:        38400
+    mode_p:             0
+    mode_aceleration:   5
+    mode_regulator:     True
+    mode_timeout:       True
+    speed_value_r:      128
+    speed_value_l:      128
+    # wheel_radius:       0.07
+    wheel_radius:       0.0754
+    wheel_separation:   0.4034
+    percent_separation: 1.621
+    #percent_separation: 1.625
+    #frecuency_work:     50
+# Parameters list for md controller

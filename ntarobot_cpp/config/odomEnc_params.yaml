@@ -1,0 +1,5 @@
+odom_encoders_node:
+  ros__parameters:
+    wheel_radius:       0.0754
+    wheel_separation:   0.4034
+    percent_separation: 1.621
