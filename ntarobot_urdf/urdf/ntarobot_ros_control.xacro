@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+
+<!-- El siguiente programa contiene las funciones de control del disenho -->
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="ntarobot">
+    <!-- Este patron de parametros se suele usar para el disenho de modelos -->
+    <ros2_control type="system" name="RobotSystem">
+        <!-- Este hardware importa el plugin de sustema para gazebo -->
+        <hardware>
+            <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+        </hardware>
+
+        <!-- Ademas agregamos el control para cada una de las articulaciones en las que se tiene un actuador -->
+        <joint name="wheel_front_left_joint">
+            <!-- Se agrega el comando de la interface con la cual se lleva a acabo el control -->
+            <command_interface name="velocity">
+                <!-- Parametros de limitante de velocidad -->
+                <param name="min">-10</param>
+                <param name="max">10</param>
+            </command_interface>
+            <!-- Se describe tambien la interfaz de estado del robot -->
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+        </joint>
+
+        <!-- Ahora se anhade la rueda encadenada a la actuadora (usando una funcion mimic) -->
+        <!-- la primera corresponde a la rueda encadenada por el lador izquierdo -->
+        <joint name="wheel_back_left_joint">
+            <!-- Se crean los parametros que relacionan la articulacion encadenada al actuador -->
+            <command_interface name="velocity">
+                <!-- Parametros de limitante de velocidad -->
+                <param name="min">-10</param>
+                <param name="max">10</param>
+            </command_interface>
+
+            <!-- Primero va el parametro de la articulacion que va a imitar -->
+            <!-- <param name="mimic">wheel_front_left_joint</param> -->
+            <!-- Luego se establece el valor multiplicador de la relacion de velocidad-->
+            <!-- <param name="multiplier">1</param> -->
+            <!-- Se agrega el comando de la interface con la cual se lleva a acabo el control -->
+            <!-- <command_interface name="velocity"/> -->
+            <!-- Se describe tambien la interfaz de estado del robot -->
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+        </joint>
+
+        <!-- Este proceso se repite para la rueda derecha trasera del robot -->
+        <joint name="wheel_back_right_joint">
+            <!-- Se agrega el comando de la interface con la cual se lleva a acabo el control -->
+            <command_interface name="velocity">
+                <!-- Parametros de limitante de velocidad -->
+                <param name="min">-10</param>
+                <param name="max">10</param>
+            </command_interface>
+            <!-- Se describe tambien la interfaz de estado del robot -->
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+        </joint>
+
+        <!-- Lo mismo, la funcion mimic, para la segunda rueda -->
+        <!-- la primera corresponde a la rueda encadenada por el lador izquierdo -->
+        <joint name="wheel_front_right_joint">
+            <!-- Se crean los parametros que relacionan la articulacion encadenada al actuador -->
+            <command_interface name="velocity">
+                <!-- Parametros de limitante de velocidad -->
+                <param name="min">-10</param>
+                <param name="max">10</param>
+            </command_interface>
+
+            <!-- Primero va el parametro de la articulacion que va a imitar -->
+            <!-- <param name="mimic">wheel_back_right_joint</param> -->
+            <!-- Luego se establece el valor multiplicador de la relacion de velocidad-->
+            <!-- <param name="multiplier">1</param> -->
+            <!-- Se agrega el comando de la interface con la cual se lleva a acabo el control -->
+            <!-- <command_interface name="velocity"/> -->
+            <!-- Se describe tambien la interfaz de estado del robot -->
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+        </joint>
+    </ros2_control>
+</robot>

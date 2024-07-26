@@ -1,0 +1,143 @@
+<?xml version="1.0"?>
+
+<!-- Este documento alberga la descripcion del robot para comunicacion con gazebo -->
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="ntarobot">
+    <!-- Primero se debe designar la transmision del robot -->
+    <!-- Las ruedas que tienen actuadores son la rueda delantera izquierda y la trasera derecha --> 
+    <transmission name="wheel_front_left_transmission">
+        <!-- Plugin de transmision para la rueda -->
+        <plugin>transmission_interface/SimpleTransmission</plugin>
+        <!-- Actuador de la rueda -->
+        <actuator name="wheel_front_left_motor" role="actuator_front_left"/>
+        <!-- En esta etiqueta se refiere a la articulacion implicada en el movimiento de la rueda derecha -->
+        <joint name="wheel_front_left_joint" role="joint_front_left">
+            <!-- Final mente tambien se ingresa el valor de la reduccion mecanica de la rueda -->
+            <mechanical_reduction>1.0</mechanical_reduction>
+        </joint>
+    </transmission>
+
+    <!-- Transmision izquierda trasera -->
+    <transmission name="wheel_back_left_transmission">
+        <!-- Plugin de transmision para la rueda -->
+        <plugin>transmission_interface/SimpleTransmission</plugin>
+        <!-- Actuador de la rueda -->
+        <actuator name="wheel_back_left_motor" role="actuator_back_left"/>
+        <!-- En esta etiqueta se refiere a la articulacion implicada en el movimiento de la rueda derecha -->
+        <joint name="wheel_back_left_joint" role="joint_back_left">
+            <!-- Final mente tambien se ingresa el valor de la reduccion mecanica de la rueda -->
+            <mechanical_reduction>1.0</mechanical_reduction>
+        </joint>
+    </transmission>
+    <!-- <transmission name="wheel_back_left_transmission"> -->
+        <!-- Plugin de transmision para la rueda -->
+        <!-- <plugin>transmission_interface/SimpleTransmission</plugin> -->
+        <!-- Actuador de la rueda -->
+        <!-- <actuator name="wheel_back_left_motor" role="actuator_back_left"/> -->
+        <!-- En esta etiqueta se refiere a la articulacion implicada en el movimiento de la rueda derecha -->
+        <!-- <joint name="wheel_back_left_joint" role="joint_back_left"> -->
+            <!-- Final mente tambien se ingresa el valor de la reduccion mecanica de la rueda -->
+            <!-- <mechanical_reduction>1.0</mechanical_reduction> -->
+        <!-- </joint> -->
+    <!-- </transmission> -->
+
+    <!-- Transmision derecha trasera -->
+    <transmission name="wheel_back_right_transmission">
+        <!-- Plugin de transmision para la rueda -->
+        <plugin>transmission_interface/SimpleTransmission</plugin>
+        <!-- Actuador de la rueda -->
+        <actuator name="wheel_back_right_motor" role="actuator_back_right"/>
+        <!-- En esta etiqueta se refiere a la articulacion implicada en el movimiento de la rueda derecha -->
+        <joint name="wheel_back_right_joint" role="joint_back_right">
+            <!-- Final mente tambien se ingresa el valor de la reduccion mecanica de la rueda -->
+            <mechanical_reduction>1.0</mechanical_reduction>
+        </joint>
+    </transmission>
+
+    <!-- Transmision derecha delantera -->
+    <transmission name="wheel_front_right_transmission">
+        <!-- Plugin de transmision para la rueda -->
+        <plugin>transmission_interface/SimpleTransmission</plugin>
+        <!-- Actuador de la rueda -->
+        <actuator name="wheel_front_right_motor" role="actuator_front_right"/>
+        <!-- En esta etiqueta se refiere a la articulacion implicada en el movimiento de la rueda derecha -->
+        <joint name="wheel_front_right_joint" role="joint_front_right">
+            <!-- Final mente tambien se ingresa el valor de la reduccion mecanica de la rueda -->
+            <mechanical_reduction>1.0</mechanical_reduction>
+        </joint>
+    </transmission>
+    <!-- <transmission name="wheel_front_right_transmission"> -->
+        <!-- Plugin de transmision para la rueda -->
+        <!-- <plugin>transmission_interface/SimpleTransmission</plugin> -->
+        <!-- Actuador de la rueda -->
+        <!-- <actuator name="wheel_front_right_motor" role="actuator_front_right"/> -->
+        <!-- En esta etiqueta se refiere a la articulacion implicada en el movimiento de la rueda derecha -->
+        <!-- <joint name="wheel_front_right_joint" role="joint_front_right"> -->
+            <!-- Final mente tambien se ingresa el valor de la reduccion mecanica de la rueda -->
+            <!-- <mechanical_reduction>1.0</mechanical_reduction> -->
+        <!-- </joint> -->
+    <!-- </transmission> -->
+
+    <!-- Valores de referencia de posicionamiento de cada una de las ruedas -->
+    <!-- Rueda delantera derecha -->
+    <!-- <gazebo reference="wheel_front_right_link"> -->
+        <!-- Entender mejor los valores agregados en esta seccion -->
+        <!-- <mu1>1000000000000000.0</mu1> -->
+        <!-- <mu2>1000000000000000.0</mu2> -->
+        <!-- <kp>1000000000000.0</kp> -->
+        <!-- <kd>10.0</kd> -->
+        <!-- <minDepth>0.001</minDepth> -->
+        <!-- <maxVel>0.1</maxVel> -->
+        <!-- <fdir1>1 0 0</fdir1> -->
+    <!-- </gazebo> -->
+
+    <!-- Rueda delantera Izquierda -->
+    <!-- <gazebo reference="wheel_front_left_link"> -->
+        <!-- Entender mejor los valores agregados en esta seccion -->
+        <!-- <mu1>1000000000000000.0</mu1> -->
+        <!-- <mu2>1000000000000000.0</mu2> -->
+        <!-- <kp>1000000000000.0</kp> -->
+        <!-- <kd>10.0</kd> -->
+        <!-- <minDepth>0.001</minDepth> -->
+        <!-- <maxVel>0.1</maxVel> -->
+        <!-- <fdir1>1 0 0</fdir1> -->
+    <!-- </gazebo> -->
+
+    <!-- Rueda trasera derecha -->
+    <!-- <gazebo reference="wheel_back_right_link"> -->
+        <!-- Entender mejor los valores agregados en esta seccion -->
+        <!-- <mu1>1000000000000000.0</mu1> -->
+        <!-- <mu2>1000000000000000.0</mu2> -->
+        <!-- <kp>1000000000000.0</kp> -->
+        <!-- <kd>10.0</kd> -->
+        <!-- <minDepth>0.001</minDepth> -->
+        <!-- <maxVel>0.1</maxVel> -->
+        <!-- <fdir1>1 0 0</fdir1> -->
+    <!-- </gazebo> -->
+
+    <!-- Rueda trasera izquierda -->
+    <!-- <gazebo reference="wheel_back_left_link"> -->
+        <!-- Entender mejor los valores agregados en esta seccion -->
+        <!-- <mu1>1000000000000000.0</mu1> -->
+        <!-- <mu2>1000000000000000.0</mu2> -->
+        <!-- <kp>1000000000000.0</kp> -->
+        <!-- <kd>10.0</kd> -->
+        <!-- <minDepth>0.001</minDepth> -->
+        <!-- <maxVel>0.1</maxVel> -->
+        <!-- <fdir1>1 0 0</fdir1> -->
+    <!-- </gazebo> -->
+
+    <!-- Seccion de localizacion de paquete de control de gazebo -->
+    <!-- Agregamos al final el nuevo plugin de gazebo -->
+    <gazebo>
+        <!-- Se especifica la localizacion del paquete o plugin que se esta llamando -->
+        <plugin filename="libgazebo_ros2_control.so" name="gazebo_ros2_control">
+            <!-- Luego se establece los ejecutables del robot segun se necesita -->
+            <!-- Entre ellos encontramos la localizacion de la localizacion del robot, el publicador de la posicion del robot-->
+            <robot_param>robot_description</robot_param>
+            <robot_param_node>robot_state_publisher</robot_param_node>
+            <!-- Estos parametros dependen del sistema de control creado para el robot -->
+            <!-- <parameters>$(find ntarobot_control)/config/robot_control.yaml</parameters> -->
+            <!-- $(find robot_control_1)/config/robot_control.yaml-->
+        </plugin>
+    </gazebo>
+</robot>
