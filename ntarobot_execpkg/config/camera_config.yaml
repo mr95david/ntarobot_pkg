@@ -1,0 +1,4 @@
+node_camera:
+  ros__parameters:
+    video_device: "/dev/video0"
+    frame_rate: 10
