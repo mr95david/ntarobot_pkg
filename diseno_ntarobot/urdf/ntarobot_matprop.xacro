@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name = "ntarobot">
+    <!-- Este archivo alberga unicamente los valores de propiedades y materiales para el nucleo del robot -->
+
+    <!-- Seccion para creacion de propiedades de links -->
+    <xacro:property name="chassis_length" value="0.3920"/>
+    <xacro:property name="chassis_height" value="0.3045"/>
+    <xacro:property name="chassis_width" value="0.2500"/>
+    <!-- Seccion de valores de medidas de ruedas -->
+    <xacro:property name="wheel_radius" value="0.07"/>
+    <xacro:property name="wheel_thickness" value="0.047"/>
+    <xacro:property name="wheel_offset_x" value="0.226"/>
+    <xacro:property name="wheel_offset_y" value="0.175"/>
+    <xacro:property name="wheel_offset_z" value="0.01"/>
+    <!-- Seccion de propiedades de medidas de imu -->
+    <xacro:property name="imu_length" value="0.0394"/>
+    <xacro:property name="imu_height" value="0.0394"/>
+    <xacro:property name="imu_width" value="0.0324"/>
+    <!-- Propiedades de la camara -->
+    <xacro:property name="camera_length" value="0.0285"/>
+    <xacro:property name="camera_height" value="0.0285"/>
+    <xacro:property name="camera_width" value="0.0285"/>
+    <!-- Seccion de dimensiones de lidar -->
+    <xacro:property name="lidar_radius" value="0.0379"/>
+    <xacro:property name="lidar_thickness" value="0.045"/>
+    <!-- Fin de seccion de propieades -->
+
+    <!-- Seccion de colores -->
+    <material name = "blue">
+        <color rgba = "${3/255} ${111/255} ${183/255} 1"/>
+    </material>
+
+    <material name="black">
+        <color rgba="0 0 0 1"/>
+    </material>
+
+    <material name="red">
+        <color rgba="${255/255} ${99/255} ${71/255} 1"/>
+    </material>
+
+    <material name="green">
+        <color rgba="${0/255} ${198/255} ${66/255} 1"/>
+    </material>
+
+    <material name="white">
+        <color rgba="${255/255} ${255/255} ${255/255} 1"/>
+    </material>
+
+    <material name="camera-color">
+        <color rgba="${201/255} ${201/255} ${201/255} 1"/>
+    </material>
+
+    <material name="lidar-color">
+        <color rgba="${163/255} ${73/255} ${164/255} 1"/>
+    </material>
+    <!-- fin de seccion de colores -->
+</robot>
